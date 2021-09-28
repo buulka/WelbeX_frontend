@@ -18,7 +18,7 @@
           ></b-form-select>
 
             <div v-if="sortform.selected_column != null">
-              <b-button  @click="updateSortedItems" type="submit">Отсортировать</b-button>
+              <b-button  id="but" @click="updateSortedItems" type="submit">Отсортировать</b-button>
             </div>
 
             <div v-else>
@@ -118,13 +118,16 @@
 
 						</tbody>
 					</table>
-				</div>
+        </div>
 
+				  <div class="col-md-4">
+            <b-button  @click="getItems" type="submit" class="btn btn-warning">Сбросить настройки</b-button>
+          </div>
+      </div>
 
-	</div>
   <div class="row">
     <b-button-group class="mx-1">
-          <b-button type="button"  v-if="page != 1" @click="page--"> Назад </b-button>
+          <b-button type="button"  v-if="page !== 1" @click="page--"> Назад </b-button>
     </b-button-group>
 
     <b-button-group class="mx-1">
@@ -135,6 +138,7 @@
           <b-button type="button" @click="page++" v-if="page < pages.length" > Вперед </b-button>
     </b-button-group>
   </div>
+
 </div>
 
 
@@ -175,6 +179,7 @@ computed: {
       this.setPages();
     }
   },
+
 
   methods: {
 
@@ -223,7 +228,6 @@ computed: {
   },
 
   updateSortedItems() {
-
     const path = `${baseUrl}/sort/`;
     const article = {selected_column: this.sortform.selected_column};
     axios
