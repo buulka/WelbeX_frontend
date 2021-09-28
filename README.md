@@ -1,19 +1,13 @@
-# frontend
+# Фронтенд тестового задания для WelbeX
 
-## Project setup
-```
-npm install
-```
+Ожидаемый результат: таблица в формате Single Page Application с реализованными фильтрацией, сортировкой и пагинацией.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Реализация
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Фронтенд написан на Vue, для работы с HTTP-запросами используется библиотека axios.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Деплой 
+
+Ссылка: https://welbex-frontend.herokuapp.com/
+
+Бэкэнд и фронтенд разнесены в разные репозитории и задеплоены на Heroku, работают параллельно
